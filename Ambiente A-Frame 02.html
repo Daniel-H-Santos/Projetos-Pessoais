@@ -44,45 +44,45 @@
   
         </a-entity>
 
-          <script id="Script Sala">
-            document.querySelector('#Chao').addEventListener('mouseenter', function () {
-              this.setAttribute('color', '#ee6872');
-            });
-            document.querySelector('#Chao').addEventListener('mouseleave', function () {
-              this.setAttribute('color', '#778899');
-            });
+        <script id="Script Sala">
+          document.querySelector('#Chao').addEventListener('mouseenter', function () {
+            this.setAttribute('color', '#ee6872');
+          });
+          document.querySelector('#Chao').addEventListener('mouseleave', function () {
+            this.setAttribute('color', '#778899');
+          });
 
-            document.querySelector('#Parede_Direita').addEventListener('mouseenter', function () {
-              this.setAttribute('color', '#7B68EE');
-            });
-            document.querySelector('#Parede_Direita').addEventListener('mouseleave', function () {
-              this.setAttribute('color', '#778899');
-            });
+          document.querySelector('#Parede_Direita').addEventListener('mouseenter', function () {
+            this.setAttribute('color', '#7B68EE');
+          });
+          document.querySelector('#Parede_Direita').addEventListener('mouseleave', function () {
+            this.setAttribute('color', '#778899');
+          });
 
-            document.querySelector('#Parede_Esquerda').addEventListener('mouseenter', function () {
-              this.setAttribute('color', '#7B68EE');
-            });
-            document.querySelector('#Parede_Esquerda').addEventListener('mouseleave', function () {
-              this.setAttribute('color', '#778899');
-            });
+          document.querySelector('#Parede_Esquerda').addEventListener('mouseenter', function () {
+            this.setAttribute('color', '#7B68EE');
+          });
+          document.querySelector('#Parede_Esquerda').addEventListener('mouseleave', function () {
+            this.setAttribute('color', '#778899');
+          });
 
-            document.querySelector('#Parede_Meio').addEventListener('mouseenter', function () {
-              this.setAttribute('color', '#7B68EE');
-            });
-            document.querySelector('#Parede_Meio').addEventListener('mouseleave', function () {
-              this.setAttribute('color', '#778899');
-            });
-            document.querySelector('#Parede_Costas').addEventListener('mouseenter', function () {
-              this.setAttribute('color', '#7B68EE');
-            });
-            document.querySelector('#Parede_Costas').addEventListener('mouseleave', function () {
-              this.setAttribute('color', '#778899');
-            });
-            </script>
+          document.querySelector('#Parede_Meio').addEventListener('mouseenter', function () {
+            this.setAttribute('color', '#7B68EE');
+          });
+          document.querySelector('#Parede_Meio').addEventListener('mouseleave', function () {
+            this.setAttribute('color', '#778899');
+          });
+          document.querySelector('#Parede_Costas').addEventListener('mouseenter', function () {
+            this.setAttribute('color', '#7B68EE');
+          });
+          document.querySelector('#Parede_Costas').addEventListener('mouseleave', function () {
+            this.setAttribute('color', '#778899');
+          });
+          </script>
           
         <!-- Luz Abajur -->
         <a-entity id="Luz Abajur">
-        <!-- Luz Ambiente -->
+          <!-- Luz Ambiente -->
           <a-light id="Luz Ambiente" type="ambient" intensity="0.8" angle="90" position="-1.5 5 -4.5"></a-light>
           
           <!-- Lâmpada Abajur -->
@@ -153,20 +153,22 @@
             vidro.addEventListener('mouseenter', mouseMesaIn);
             vidro.addEventListener('mouseleave', mouseMesaOut);
           </script>
-        </a-entity>
-        <!-- Sofá -->
-        <a-entity id="Sofa" class="intersectable" onmouseenter="showText('Texto Sofa')" onmouseleave="hideText('Texto Sofa')">
-          <!-- Fundo Sofá -->
-          <a-box id="Fundo_Sofá" position="0.3 0.5 -4.85" material="color: #1C1C1C" width="2.50" height="0.92" depth="0.25"></a-box>
 
-          <!-- Lado Direito -->
-          <a-box id="Lado_Direito" position="1.5 0.5 -4.525" material="color: #1C1C1C" width="0.3" height="0.92" depth="0.9"></a-box>
+        <!-- Sofá -->
+        <a-entity id="Sofa">
+          <a-entity id="Sofa" class="intersectable" onmouseenter="showText('Texto Sofa')" onmouseleave="hideText('Texto Sofa')">
+            <!-- Fundo Sofá -->
+            <a-box id="Fundo_Sofá" position="0.3 0.5 -4.85" material="color: #1C1C1C" width="2.50" height="0.92" depth="0.25"></a-box>
+
+            <!-- Lado Direito -->
+            <a-box id="Lado_Direito" position="1.5 0.5 -4.525" material="color: #1C1C1C" width="0.3" height="0.92" depth="0.9"></a-box>
 
           <!-- Lado Esquerdo -->
-          <a-box id="Lado_Esquerdo" position="-1.1 0.5 -4.525" material="color: #1C1C1C" width="0.3" height="0.92" depth="0.9"></a-box>
+            <a-box id="Lado_Esquerdo" position="-1.1 0.5 -4.525" material="color: #1C1C1C" width="0.3" height="0.92" depth="0.9"></a-box>
 
-          <!-- Estofado -->
-          <a-box id="Estofado" position="0.23 0.29 -4.53" material="color: #363636" width="2.50" height="0.5" depth="0.9"></a-box>
+            <!-- Estofado -->
+            <a-box id="Estofado" position="0.23 0.29 -4.53" material="color: #363636" width="2.50" height="0.5" depth="0.9"></a-box>
+          </a-entity>
         </a-entity>
 
         <a-entity id="Textos Sofá">
@@ -270,7 +272,7 @@
         <!-- Arandelas -->
         <a-entity id="Arandelas">
           <!--Parede Direita -->
-          <a-box id="Arandela_Direita" position="1.8 2.5 -3" color="#DAA520" depth="0.3" height="0.5" width="0.3" class="intersectable" onmouseenter="showText('Arandela Direita')" onmouseleave="hideText('Arandela Direita')"></a-box>></a-box>
+          <a-box id="Arandela_Direita" position="1.8 2.5 -3" color="#DAA520" depth="0.3" height="0.5" width="0.3" class="intersectable" onmouseenter="showText('Arandela Direita')" onmouseleave="hideText('Arandela Direita')"></a-box>
 
           <!-- Parede Meio Direita -->
           <a-box id="Arandela_Meio_Direita" position="1.3 2.5 -4.8" color="#DAA520" depth="0.3" height="0.5" width="0.3" class="intersectable" onmouseenter="showText('Meio Direita')" onmouseleave="hideText('Meio Direita')"></a-box>
