@@ -1,0 +1,316 @@
+<html>
+	<html lang="pt-br"></html>
+  <head>
+	<title>Claudia Lima</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene> 
+
+		<a-entity id="Camera">
+			<a-camera position="0 1.6 0">
+				<a-cursor id="Cursor"></a-cursor>
+			</a-camera>
+		</a-entity>
+
+		<a-entity id="Iluminação">
+			<a-light id="Luz Ambiente" type="ambient" intensity="0.7" angle="90"></a-light>
+
+			<a-light id="Arandela.Esquerda" type="spot" position="2.5 2.2 3.47" intensity="0.5" rotation="-90 0 0"></a-light>
+
+			<a-light id="Arandela.Direita" type="spot" position="-2.5 2.2 3.47" intensity="0.5" rotation="-90 0 0"></a-light>
+
+			<a-light id="Abajur.Direita" type="point" position="2 1.3 -2.7" intensity="0.5"></a-light>
+
+			<a-light id="Abajur.Esquerda" type="point" position="-2 1.3 -2.7" intensity="0.5"></a-light>
+		</a-entity>
+
+		<a-entity id="Sala">
+			<a-box id="Chao" position="0 0 0" rotation="90 0 0" width="7.2" height="7.2" depth="0.1" material="color: #708090" roughness="0" class="intersectable" onmouseenter="showText('Texto Chao')" onmouseleave="hideText('Texto Chao')"></a-box>
+
+			<a-box id="Parede_Esquerda" position="-3.55 1.45 0" depth="0.1" height="3" width="7.2" material="color: #708090" rotation="0 90 0" roughness="0" class="intersectable" onmouseenter="showText('Texto Esquerda')" onmouseleave="hideText('Texto Esquerda')"></a-box>
+
+			<a-box id="Parede_Direita" position="3.55 1.45 0" depth="0.1" height="3" width="7.2" rotation="0 90 0" material="color: #708090" roughness="0" class="intersectable" onmouseenter="showText('Texto Direita')" onmouseleave="hideText('Texto Direita')"></a-box>
+
+			<a-box id="Parede_Meio" position="0 1.45 -3.55" rotation="0 0 0" depth="0.1" height="3" width="7.2" material="color: #708090" roughness="0" class="intersectable" onmouseenter="showText('Texto Meio')" onmouseleave="hideText('Texto Meio')"></a-box>
+
+			<a-box id="Parede_Costas" position="0 1.45 3.55" rotation="0 0 0" depth="0.1" height="3" width="7.2" material="color: #708090"roughness="0" class="intersectable" onmouseenter="showText('Texto Costas')" onmouseleave="hideText('Texto Costas')"></a-box>
+		</a-entity>
+
+		<a-entity id="Textos Sala">
+			<a-entity id="Texto Chao" text="value: Chao; color: #000000; width: 3" position="1 0.05 -1" visible="false" rotation="-90 0 45"></a-entity>
+
+			<a-entity id="Texto Esquerda" text="value: Parede Esquerda; color: #000000; width: 3" position="-3.5 1.5 -1" visible="false" rotation="0 90 0"></a-entity>
+
+			<a-entity id="Texto Direita" text="value: Parede Direita; color: #000000; width: 3" position="3.5 1.5 1" visible="false" rotation="0 -90 0"></a-entity>
+
+			<a-entity id="Texto Meio" text="value: Parede Meio; color: #000000; width: 3" position="1.1 1.5 -3.5" visible="false" side="doble" rotation="0 0 0"></a-entity>
+
+			<a-entity id="Texto Costas" text="value: Parede Atras; color: #000000; width: 3" position="-1.1 1.5 3.5" visible="false" rotation="0 -180 0"></a-entity>
+		</a-entity>
+
+		<script id="Script Sala">
+			document.querySelector('#Chao').addEventListener('mouseenter', function () {
+			  this.setAttribute('color', '#94deff');
+			});
+			document.querySelector('#Chao').addEventListener('mouseleave', function () {
+			  this.setAttribute('color', '#708090');
+			});
+  
+			document.querySelector('#Parede_Direita').addEventListener('mouseenter', function () {
+			  this.setAttribute('color', '#94deff');
+			});
+			document.querySelector('#Parede_Direita').addEventListener('mouseleave', function () {
+			  this.setAttribute('color', '#708090');
+			});
+  
+			document.querySelector('#Parede_Esquerda').addEventListener('mouseenter', function () {
+			  this.setAttribute('color', '#94deff');
+			});
+			document.querySelector('#Parede_Esquerda').addEventListener('mouseleave', function () {
+			  this.setAttribute('color', '#708090');
+			});
+  
+			document.querySelector('#Parede_Meio').addEventListener('mouseenter', function () {
+			  this.setAttribute('color', '#94deff');
+			});
+			document.querySelector('#Parede_Meio').addEventListener('mouseleave', function () {
+			  this.setAttribute('color', '#708090');
+			});
+			document.querySelector('#Parede_Costas').addEventListener('mouseenter', function () {
+			  this.setAttribute('color', '#94deff');
+			});
+			document.querySelector('#Parede_Costas').addEventListener('mouseleave', function () {
+			  this.setAttribute('color', '#708090');
+			});
+		</script>
+
+		<a-entity id="Arandelas">
+			<a-box id="Arandela_Esquerda" position="2.5 2.2 3.44" depth="0.3" height="0.5" width="0.3" material="color: #009bff" class="intersectable" onmouseenter="showText('Arandela Esquerda')" onmouseleave="hideText('Arandela Esquerda')"></a-box>
+
+			<a-box id="Arandela_Direita" position="-2.5 2.2 3.44" depth="0.3" height="0.5" width="0.3" material="color: #009bff" class="intersectable" onmouseenter="showText('Arandela Direita')" onmouseleave="hideText('Arandela Direita')"></a-box>
+		</a-entity>
+
+		<a-entity id="Textos Arandelas">
+			<a-entity id="Arandela Esquerda" text="value: Arandela; color: #000000; width: 2" position="1.68 2.2 3.29" visible="false" rotation="0 180 0"></a-entity>
+
+  			<a-entity id="Arandela Direita" text="value: Arandela; color: #000000; width: 2" position="-3.32 2.2 3.29" visible="false" rotation="0 180 0"></a-entity>
+		</a-entity>
+
+		<script id="Script Arandelas">
+			document.querySelector('#Arandela_Esquerda').addEventListener('mouseenter', function(){
+				this.setAttribute('color', '#ea94ff')
+			});
+			document.querySelector('#Arandela_Esquerda').addEventListener('mouseleave', function(){
+				this.setAttribute('color', '#009bff')
+			});
+
+			document.querySelector('#Arandela_Direita').addEventListener('mouseenter', function(){
+				this.setAttribute('color', '#ea94ff')
+			});
+			document.querySelector('#Arandela_Direita').addEventListener('mouseleave', function(){
+				this.setAttribute('color', '#009bff')
+			});
+		</script>
+
+		<a-entity id="Sofa" class="intersectable" onmouseenter="showText('Texto Sofa')" onmouseleave="hideText('Texto Sofa')">
+			<a-box id="Estofado" position="-3.2 0.2 1.5" depth="1.8" height="0.5" width="0.7" material="color: #A9A9A9" ></a-box>
+
+			<a-box id="Costas_Sofa" position="-3.45 0.8 1.5" depth="1.8" height="1" width="0.2" material="color: #A9A9A9"></a-box>
+		</a-entity>
+
+		<a-entity id="Textos Sofa">
+			<a-entity id="Texto Sofa" text="value: Sofa; color: #000000; width:3" position="-3.35 0.8 0.2" rotation="0 90 0" visible="false"></a-entity>
+		</a-entity>
+
+		<script id="Script Sofa">
+			var estofado = document.getElementById('Estofado');
+			var costas = document.getElementById('Costas_Sofa');
+
+			function corSofá(color){
+				estofado.setAttribute('material', 'color', color);
+				costas.setAttribute('material', 'color', color);
+			}
+
+			function mouseSofaIn(){
+				corSofá('#A020F0')
+			}
+
+			function mouseSofaOut(){
+				corSofá('#A9A9A9')
+			}
+
+			estofado.addEventListener('mouseenter', mouseSofaIn);
+			estofado.addEventListener('mouseleave', mouseSofaOut);
+
+			costas.addEventListener('mouseenter', mouseSofaIn);
+			costas.addEventListener('mouseleave', mouseSofaOut);
+		</script>
+
+		<a-entity id="Abajur_Direita" class="intersectable" onmouseenter="showText('Texto Abajur Direita')" onmouseleave="hideText('Texto Abajur Direita')">
+			<a-cone id="Cupula_Direita" position="2 1.3 -2.7" height="0.5" radius-bottom="0.5" radius-top="0.3" open-ended="true" side="double" material="color: #D2691E"></a-cone>
+
+			<a-cylinder id="Suporte_Direita" position="2 0.8 -2.7" radius="0.1" height="2.0" material="color: #483D8B" geometry="height: 1; segmentsHeight: 10"></a-cylinder>
+			
+			<a-cylinder id="Base_Direita" position="2 0.3 -2.7" radius="0.4" height="0.2"  material="color: #483D8B"></a-cylinder>	
+		</a-entity>
+
+		<a-entity id="Texto Abajur.Direita">
+			<a-entity id="Texto Abajur Direita" text="value: Abajur; color: #000000; width: 3" position="3.3 1.8 -2.7" rotation="0 0 0" visible="false"></a-entity>
+		</a-entity>
+
+		<script id="Script Abajur Direita">
+          var cupulaDireita = document.getElementById('Cupula_Direita');
+          var suporteDireita = document.getElementById('Suporte_Direita');
+          var baseDireita = document.getElementById('Base_Direita');
+
+          function corCupulaDireita(color) {
+            cupulaDireita.setAttribute('material', 'color', color);
+          }
+
+          function corBaseDireita(color2) {
+            suporteDireita.setAttribute('material', 'color', color2);
+            baseDireita.setAttribute('material', 'color', color2);
+          }
+
+          function mouseAbajurDireitaIn() {
+            corCupulaDireita('#23a71b');
+            corBaseDireita('#165612');
+          }
+
+          function mouseAbajurDireitaOut() {
+            corCupulaDireita('#D2691E');
+            corBaseDireita('#483D8B');
+          }
+
+          cupulaDireita.addEventListener('mouseenter', mouseAbajurDireitaIn);
+          cupulaDireita.addEventListener('mouseleave', mouseAbajurDireitaOut);
+
+          suporteDireita.addEventListener('mouseenter', mouseAbajurDireitaIn);
+          suporteDireita.addEventListener('mouseleave', mouseAbajurDireitaOut);
+
+          baseDireita.addEventListener('mouseenter', mouseAbajurDireitaIn);
+          baseDireita.addEventListener('mouseleave', mouseAbajurDireitaOut);
+		</script>
+
+		<a-entity id="Abajur_Esquerda" class="intersectable" onmouseenter="showText('Texto Abajur Esquerda')" onmouseleave="hideText('Texto Abajur Esquerda')">
+			<a-cone id="Cupula_Esquerda" position="-2 1.3 -2.7" height="0.5" radius-bottom="0.5" radius-top="0.3" open-ended="true" side="double" material="color: #D2691E"></a-cone>
+
+			<a-cylinder id="Suporte_Esquerda" position="-2 0.8 -2.7" radius="0.1" height="2.0" material="color: #483D8B" geometry="height: 1; segmentsHeight: 10"></a-cylinder>
+			
+			<a-cylinder id="Base_Esquerda" position="-2 0.3 -2.7" radius="0.4" height="0.2"  material="color: #483D8B"></a-cylinder>	
+		</a-entity>
+
+		<a-entity id="Texto Abajur.Esquerda">
+			<a-entity id="Texto Abajur Esquerda" text="value: Abajur; color: #000000; width: 3" position="-0.7 1.8 -2.7" rotation="0 0 0" visible="false"></a-entity>
+		</a-entity>
+
+		<script id="Script Abajur Esquerda">
+			var cupulaEsquerda = document.getElementById('Cupula_Esquerda');
+			var suporteEsquerda = document.getElementById('Suporte_Esquerda');
+			var baseEsquerda = document.getElementById('Base_Esquerda');
+  
+			function corCupulaEsquerda(color) {
+			  cupulaEsquerda.setAttribute('material', 'color', color);
+			}
+  
+			function corBaseEsquerda(color2) {
+			  suporteEsquerda.setAttribute('material', 'color', color2);
+			  baseEsquerda.setAttribute('material', 'color', color2);
+			}
+  
+			function mouseAbajurEsquerdaIn() {
+			  corCupulaEsquerda('#23a71b');
+			  corBaseEsquerda('#165612');
+			}
+  
+			function mouseAbajurEsquerdaOut() {
+			  corCupulaEsquerda('#D2691E');
+			  corBaseEsquerda('#483D8B');
+			}
+  
+			cupulaEsquerda.addEventListener('mouseenter', mouseAbajurEsquerdaIn);
+			cupulaEsquerda.addEventListener('mouseleave', mouseAbajurEsquerdaOut);
+  
+			suporteEsquerda.addEventListener('mouseenter', mouseAbajurEsquerdaIn);
+			suporteEsquerda.addEventListener('mouseleave', mouseAbajurEsquerdaOut);
+  
+			baseEsquerda.addEventListener('mouseenter', mouseAbajurEsquerdaIn);
+			baseEsquerda.addEventListener('mouseleave', mouseAbajurEsquerdaaOut);
+		  </script>
+
+		<a-entity id="Aparador" class="intersectable" onmouseenter="showText('Texto Aparador')" onmouseleave="hideText('Texto Aparador')">
+			<a-box  id="Base_Aparador" position="3.03 0.9 -0.5" depth="2.4" height="0.1" width="0.9"material="color: #deb887"></a-box>
+			
+			<a-box id="Suporte1" position="2.73 0.5 -1.5" depth="0.1" height="0.9" width="0.1"material="color: #deb887"></a-box>
+
+			<a-box id="Suporte2" position="3.33 0.5 -1.5" depth="0.1" height="0.9" width="0.1" material="color: #deb887"></a-box>
+
+			<a-box id="Suporte3" position="2.73 0.5 0.5" depth="0.1" height="0.9" width="0.1" material="color: #deb887"></a-box>
+
+			<a-box id="Suporte4" position="3.33 0.5 0.5" depth="0.1" height="0.9" width="0.1" material="color: #deb887"></a-box>
+		</a-entity>
+
+		<a-entity id="Texto.Aparador">
+			<a-entity id="Texto Aparador" text="value: Aparador; color: #000000; width: 3" position="3 1.5 0.8" rotation="0 -90 0" visible="false"></a-entity>
+		</a-entity>
+
+		<script id="Script Aparador">
+			var baseAparador = document.getElementById('Base_Aparador');
+			var suporte1 = document.getElementById('Suporte1');
+			var suporte2 = document.getElementById('Suporte2');
+			var suporte3 = document.getElementById('Suporte3');
+			var suporte4 = document.getElementById('Suporte4');
+
+			function corAparador(color){
+				baseAparador.setAttribute('material', 'color', color);
+				suporte1.setAttribute('material', 'color', color);
+				suporte2.setAttribute('material', 'color', color);
+				suporte3.setAttribute('material', 'color', color);
+				suporte4.setAttribute('material', 'color', color);
+			}
+
+			function mouseAparadorIn(){
+				corAparador('#4764ff')
+			}
+
+			function mouseAparadorOut(){
+				corAparador('#deb887')
+			}
+
+			baseAparador.addEventListener('mouseenter', mouseAparadorIn);
+			baseAparador.addEventListener('mouseleave', mouseAparadorOut);
+			
+			suporte1.addEventListener('mouseenter', mouseAparadorIn);
+			suporte1.addEventListener('mouseleave', mouseAparadorOut);
+			
+			suporte2.addEventListener('mouseenter', mouseAparadorIn);
+			suporte2.addEventListener('mouseleave', mouseAparadorOut);
+			
+			suporte3.addEventListener('mouseenter', mouseAparadorIn);
+			suporte3.addEventListener('mouseleave', mouseAparadorOut);
+			
+			suporte4.addEventListener('mouseenter', mouseAparadorIn);
+			suporte4.addEventListener('mouseleave', mouseAparadorOut);
+			
+		</script>
+
+		<a-sky color="SkyBlue" material="" geometry="" scale="1 1 0.98" rotation=""></a-sky>
+		
+		<div class="a-loader-title" style="display: none;" wfd-invisible="true"></div>
+
+		<script id="Aparecer Textos">
+			// Função para exibir o texto do objeto quando o cursor entra no objeto
+			function showText(id) {
+			  const textElement = document.getElementById(id);
+			  textElement.setAttribute('visible', 'true');
+			}
+	  
+			// Função para ocultar o texto do objeto quando o cursor sai do objeto
+			function hideText(id) {
+			  const textElement = document.getElementById(id);
+			  textElement.setAttribute('visible', 'false'); 
+			}
+	
+		</script>
+	</a-scene>
